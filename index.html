@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Self Designed Project</title>
+<meta http-equiv="Access-Control-Allow-Origin" content="*" />
+
+<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+<script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
+<script src="https://recast-api.donmccurdy.com/aframe-inspector-plugin-recast.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+
+<script src="./drive1.js"></script>
+<script src="./game.js"></script>
+
+
+</head>
+<body>
+  
+<a-scene id="scene" background="color:lightblue" inspector-plugin-recast>
+
+<a-assets>
+<a-asset-item id="city" src="./low_poly_city/scene.gltf"></a-asset-item>
+
+</a-assets>
+
+<a-entity id="city" gltf-model="#city" position="10 -2.63754 -150" rotation="0 90 0" scale="2 2 2"></a-entity>
+<a-entity id="city1" gltf-model="#city" position="4300 -2.63754 -150" rotation="0 90 0" scale="2 2 2"></a-entity>
+<a-entity id="city2" gltf-model="#city" position="10 -2.63754 -4450" rotation="0 90 0" scale="2 2 2"></a-entity>
+<a-entity id="city2" gltf-model="#city" position="4300 -2.63754 -4450" rotation="0 90 0" scale="2 2 2"></a-entity>
+
+<a-box id="box1" position="1051 13 2903" scale="9000 900 0" color="brown"></a-box>
+<a-box id="box2" position="1051 13 -5800" scale="9000 900 0" color="brown"></a-box>
+<a-box id="box3" position="-3088 13 -1510" scale="9000 900 0" color="brown" rotation="0 90 0"></a-box>
+<a-box id="box3" position="5598 13 -1510" scale="9000 900 0" color="brown" rotation="0 90 0"></a-box>
+
+<a-plane id="ground" geometry="height: 40000; width: 20000; depth: 10" position="0 -243 -163.73258" rotation="-90 0 0" visible="false"></a-plane>
+
+
+<a-entity id="camera-rig" movement-controls="speed:0; constrainToNavMesh: true" position="0 1 5" rotation="0 0 0" drive game="play" >
+<a-entity id="camera" camera position="-800 1.6 2300" rotation="0 0 0" look-controls="pointerLockEnabled: false">
+
+<a-box id="control-break" src="./break.png" color="gray" position="-0.42593 -0.26091 -0.37136" rotation="0 0 0" scale="0.05 0.05 0.001"></a-box>
+<a-box id="control-acce" src="./acc.png" color="gray" position="-0.289 -0.23391 -0.37136" rotation="0 0 0" scale="0.05 0.1 0.001"></a-box>
+
+<a-entity id="timer" position="-10 5 -7.1" text="font: exo2semibold; align: center; width: 30; color: black; value: 00:00"></a-entity>
+<a-entity id="score" position="10 5 -7.1" text="font: exo2semibold; align: center; width: 30; color: black; value: Score: 0"></a-entity>
+<a-entity id="title" position="0 5 -7.1" text="font: exo2bold; align: center; width: 15; color: blue; value: VR Car Driving Simulator" shadow="receive: true"></a-entity>
+<a-entity id="speed" position="4 -5 -7.16344" text="font: kelsonsans; width:10; height: 5;value: 0">
+<a-entity id="unit" position="1 0 0" text="font: kelsonsans; width:10; height: 5; value: km/h"></a-entity>
+</a-entity>
+<a-entity id="over" position="2 1 -5" text="font: exo2bold; color: black; width:10; height: 10; value: Better Luck Next Time !!" visible="false"></a-entity>
+
+<a-sphere id="points" position="0 3 -7.1" color="yellow" scale="100 100 100"></a-sphere>
+
+</a-entity></a-entity>
+
+  
+</a-entity>
+</a-entity>
+</a-entity>
+
+
+
+</a-scene>
+</body> 
+</html>
